@@ -6,4 +6,10 @@ class TaskProvider extends ChangeNotifier {
     "Provide/Configure the provider",
     "Watch/Read provider variables/functions",
   ];
+
+  void addTask(String task) {
+    tasks.add(task);
+
+    notifyListeners();
+  }
 }

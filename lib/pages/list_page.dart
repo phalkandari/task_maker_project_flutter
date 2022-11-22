@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:task_maker_project/providers/task_provider.dart';
 
@@ -10,6 +11,13 @@ class ListPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text("List"),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  context.push("/add");
+                },
+                icon: Icon(Icons.add_box_outlined))
+          ],
         ),
         body: ListView.builder(
           itemCount: context.watch<TaskProvider>().tasks.length,
