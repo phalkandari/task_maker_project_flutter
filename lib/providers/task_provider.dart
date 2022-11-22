@@ -20,4 +20,14 @@ class TaskProvider extends ChangeNotifier {
     task.isComplete = !task.isComplete;
     notifyListeners();
   }
+
+  void deleteTask(TaskModel task) {
+    tasks.remove(task);
+    notifyListeners();
+  }
+
+  void deleteTaskByIndex(int index) {
+    tasks.removeAt(index);
+    notifyListeners();
+  }
 }

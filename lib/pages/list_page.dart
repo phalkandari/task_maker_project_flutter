@@ -36,7 +36,9 @@ class ListPage extends StatelessWidget {
                 Text(context.watch<TaskProvider>().tasks[index].text),
                 Spacer(),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.read<TaskProvider>().deleteTaskByIndex(index);
+                  },
                   icon: Icon(Icons.delete),
                 ),
               ],
